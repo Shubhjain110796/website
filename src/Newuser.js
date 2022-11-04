@@ -264,7 +264,6 @@ function Form() {
 								label="Last name"
 								name="last"
 								autoComplete="Last"
-								autoFocus
 								onChange={e => setLast_Name(e.target.value)}
 
 							/>

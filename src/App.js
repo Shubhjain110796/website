@@ -8,20 +8,23 @@ import {
 import Home from './Home';
 import { useEffect } from 'react';
 import Newuser from './Newuser';
-
+import Productlist from './Productlist';
+import AddProduct from './AddProduct';
+import { Card } from '@mui/material';
+import Carts from './Carts';
 export default function App() {
   const navigate = useNavigate();
-  let userData = JSON.parse(localStorage.getItem('userData'));
-  useEffect(() => {
-    if((userData) == null)
-    {
-      navigate('/Login');  
-    }
-    else{
-      navigate('/Home');
-    }
+  // let userData = JSON.parse(localStorage.getItem('userData'));
+  // useEffect(() => {
+  //   if((userData) == null)
+  //   {
+  //     navigate('/Login');  
+  //   }
+  //   else{
+  //     navigate('/Home');
+  //   }
   
-  },[]);
+  // },[]);
 
   
     return (
@@ -30,9 +33,19 @@ export default function App() {
       {/* <Route path='/' element={<App/>}></Route> */}
       {/* <Route path='Login' element={<Login/>}></Route> */}
       {/* <Route path='App' element={<App/>}></Route> */}
-      <Route path='home' element={<Home/>}></Route>
+      <Route path='/' element={<Home/>}></Route>
       <Route path='Login' element={<Login/>}></Route>
       <Route path='Newuser' element={<Newuser/>}></Route>
+      <Route path='Home' element={<Home/>}>
+
+        <Route path='Productlist' element={<Productlist/>}></Route>
+        <Route path='AddProduct' element={<AddProduct/>}></Route>
+        <Route path='Carts' element={<Carts/>}></Route>
+
+        {/* <Route path='home' element={<Home/>}></Route> */}
+     
+      </Route>
+      
     </Routes>   
       </>
     )
